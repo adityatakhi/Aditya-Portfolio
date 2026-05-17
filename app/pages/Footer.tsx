@@ -30,85 +30,82 @@ const Footer = () => {
   })
 
   return (
-    <footer className="w-full px-6 md:px-14 pt-24 pb-10 overflow-hidden bg-[#FDFCF9]">
+    <footer className="w-full px-5 sm:px-8 md:px-14 pt-20 md:pt-24 pb-8 overflow-hidden bg-[#FDFCF9]">
 
       {/* top border */}
-      <div className="w-full h-[1px] bg-[#E8DED2] mb-16" />
+      <div className="w-full h-[1px] bg-[#E8DED2] mb-14 md:mb-16" />
 
-      {/* top section */}
-      <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-16">
+      {/* TOP SECTION */}
+      <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-14 lg:gap-10">
 
-        {/* left */}
-        <div>
+        {/* LEFT */}
+        <div className="w-full lg:max-w-[60%]">
 
-          <p className="text-[12px] tracking-[0.35em] uppercase text-[#9A938B] mb-6">
+          <p className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase text-[#9A938B] mb-5">
             Current Direction
           </p>
 
-          <h1 className="text-4xl md:text-6xl leading-[1] font-semibold tracking-tight text-[#0B132B] max-w-[700px]">
+          <h1 className="text-[2.4rem] sm:text-5xl md:text-6xl leading-[0.95] font-semibold tracking-tight text-[#0B132B]">
+
             Building things that feel simple,
             useful and quietly different.
+
           </h1>
 
         </div>
 
-        {/* right */}
-        <div className="flex flex-col items-start lg:items-end gap-8">
+        {/* RIGHT */}
+        <div className="w-full lg:w-auto flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end justify-between gap-8">
 
-          {/* socials */}
-          <div className="flex items-center flex-wrap gap-4">
+          {/* SOCIALS */}
+          <div className="flex items-center flex-wrap gap-3 sm:gap-4">
 
-            {/* Instagram */}
             <a
               href="https://www.instagram.com/aditya_takhi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
             >
-              <FaInstagram size={18} />
+              <FaInstagram size={17} />
             </a>
 
-            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/aditya-kumar-7a6764378/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
             >
-              <FaLinkedin size={18} />
+              <FaLinkedin size={17} />
             </a>
 
-            {/* GitHub */}
             <a
               href="https://github.com/adityatakhi"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
             >
-              <FaGithub size={18} />
+              <FaGithub size={17} />
             </a>
 
-            {/* Telegram */}
             <a
               href="https://t.me/aditya_takhi"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
             >
-              <FaTelegramPlane size={18} />
+              <FaTelegramPlane size={17} />
             </a>
 
-            {/* Email */}
             <a
               href="mailto:kumaraditya01@gmail.com"
-              className="w-12 h-12 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-[#E6DDD2] flex items-center justify-center hover:bg-[#0B132B] hover:text-white transition-all duration-300"
             >
-              <MdEmail size={18} />
+              <MdEmail size={17} />
             </a>
 
           </div>
 
-          {/* back to top */}
+          {/* BACK TO TOP */}
           <button
             onClick={() =>
               window.scrollTo({
@@ -116,17 +113,17 @@ const Footer = () => {
                 behavior: "smooth",
               })
             }
-            className="group flex items-center gap-4 px-5 py-3 rounded-full border border-[#E6DDD2] hover:bg-[#0B132B] transition-all duration-300"
+            className="group flex items-center gap-3 px-4 py-2.5 rounded-full border border-[#E6DDD2] hover:bg-[#0B132B] transition-all duration-300"
           >
 
-            <span className="text-sm text-[#0B132B] group-hover:text-white transition-all duration-300">
+            <span className="text-sm text-[#0B132B] group-hover:text-white transition-all duration-300 whitespace-nowrap">
               Back to top
             </span>
 
             <div className="w-8 h-8 rounded-full bg-[#0B132B] group-hover:bg-white flex items-center justify-center transition-all duration-300">
 
               <IoArrowUp
-                size={16}
+                size={15}
                 className="text-white group-hover:text-[#0B132B] transition-all duration-300"
               />
 
@@ -138,14 +135,14 @@ const Footer = () => {
 
       </div>
 
-      {/* bottom section */}
-      <div className="mt-20 pt-8 border-t border-[#ECE4D9] flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden">
+      {/* BOTTOM */}
+      <div className="mt-16 md:mt-20 pt-7 border-t border-[#ECE4D9] flex flex-col md:flex-row items-start md:items-center justify-between gap-8 overflow-hidden">
 
-        {/* identity */}
+        {/* IDENTITY */}
         <div className="flex items-center gap-3 shrink-0">
 
-          <div className="w-10 h-10 rounded-full bg-[#0B132B] text-white flex items-center justify-center text-sm font-medium">
-            AK <span className="text-orange-300">.</span>
+          <div className="w-10 h-10 rounded-full bg-[#0B132B] text-white flex items-center justify-center text-sm font-medium shrink-0">
+            AK<span className="text-orange-300">.</span>
           </div>
 
           <div>
@@ -162,7 +159,7 @@ const Footer = () => {
 
         </div>
 
-        {/* marquee */}
+        {/* MARQUEE */}
         <div className="w-full overflow-hidden">
 
           <div
@@ -174,7 +171,7 @@ const Footer = () => {
 
               <div
                 key={i}
-                className="flex items-center gap-8 pr-8 text-sm text-[#8C847B] whitespace-nowrap"
+                className="flex items-center gap-6 sm:gap-8 pr-8 text-xs sm:text-sm text-[#8C847B] whitespace-nowrap"
               >
 
                 <span>

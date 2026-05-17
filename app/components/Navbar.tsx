@@ -71,27 +71,27 @@ const Navbar = () => {
                 {/* NAV LINKS */}
                 <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
 
-                    <a href="#" className="hover:text-black transition duration-300 hover:-translate-y-[1px]">
+                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
                         Home
                     </a>
 
-                    <a href="#" className="hover:text-black transition duration-300 hover:-translate-y-[1px]">
+                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
                         About
                     </a>
 
-                    <a href="#" className="hover:text-black transition duration-300 hover:-translate-y-[1px]">
+                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
                         Skills
                     </a>
 
-                    <a href="#" className="hover:text-black transition duration-300 hover:-translate-y-[1px]">
+                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
                         Projects
                     </a>
 
-                    <a href="#" className="hover:text-black transition duration-300 hover:-translate-y-[1px]">
+                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
                         Experience
                     </a>
 
-                    <a href="#" className="hover:text-black transition duration-300 hover:-translate-y-[1px]">
+                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
                         Contact
                     </a>
 
