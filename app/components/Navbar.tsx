@@ -1,7 +1,9 @@
 "use client"
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { MdOutlineArrowOutward } from "react-icons/md"
+import { HiOutlineMenuAlt3 } from "react-icons/hi"
+import { IoClose } from "react-icons/io5"
 
 // GSAP
 import gsap from 'gsap'
@@ -14,9 +16,11 @@ const Navbar = () => {
 
     const navRef = useRef(null)
 
+    const [menuOpen, setMenuOpen] = useState(false)
+
     useGSAP(() => {
 
-        // entry animation
+        // ENTRY
         gsap.from(navRef.current, {
             y: -100,
             opacity: 0,
@@ -24,7 +28,7 @@ const Navbar = () => {
             ease: "power3.out",
         })
 
-        // hide/show on scroll
+        // SCROLL HIDE/SHOW
         ScrollTrigger.create({
             start: "top -80",
 
@@ -54,64 +58,136 @@ const Navbar = () => {
     })
 
     return (
+
         <div
             ref={navRef}
-            className="w-full flex justify-center mt-6 fixed top-0 left-0 z-[999] px-4 sm:px-6"
+            className="w-full flex justify-center fixed top-4 left-0 z-[999] px-7 sm:px-7"
         >
 
-            <div className="max-w-7xl w-full backdrop-blur-md bg-white/80 rounded-2xl px-5 py-3 flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-0 shadow-md shadow-orange-50 border border-white/40">
+            <div className="max-w-7xl w-full backdrop-blur-md bg-white/80 rounded-2xl px-5 py-3 shadow-md shadow-orange-50 border border-white/40">
 
-                {/* LOGO */}
-                <div className="flex items-center gap-2">
-                    <span className="text-xl font-semibold tracking-tight">
-                        AK<span className="text-orange-500">.</span>
-                    </span>
+                {/* TOP BAR */}
+                <div className="flex items-center justify-between">
+
+                    {/* LOGO */}
+                    <div className="flex items-center gap-2">
+
+                        <span className="text-xl font-semibold tracking-tight">
+                            AK<span className="text-orange-500">.</span>
+                        </span>
+
+                    </div>
+
+                    {/* DESKTOP NAV */}
+                    <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+
+                        <a href="#" className="hover:text-black transition duration-300">
+                            Home
+                        </a>
+
+                        <a href="#" className="hover:text-black transition duration-300">
+                            About
+                        </a>
+
+                        <a href="#" className="hover:text-black transition duration-300">
+                            Skills
+                        </a>
+
+                        <a href="#" className="hover:text-black transition duration-300">
+                            Projects
+                        </a>
+
+                        <a href="#" className="hover:text-black transition duration-300">
+                            Experience
+                        </a>
+
+                        <a href="#" className="hover:text-black transition duration-300">
+                            Contact
+                        </a>
+
+                    </div>
+
+                    {/* RIGHT */}
+                    <div className="flex items-center gap-3">
+
+                        {/* CTA */}
+                        <button className="hidden sm:flex group bg-[#111827] text-white px-5 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-all duration-300 items-center gap-2">
+
+                            Let’s Connect
+
+                            <MdOutlineArrowOutward
+                                size={20}
+                                className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
+                            />
+
+                        </button>
+
+                        {/* MOBILE MENU */}
+                        <button
+                            onClick={() => setMenuOpen(!menuOpen)}
+                            className="md:hidden w-11 h-11 rounded-xl bg-[#111827] text-white flex items-center justify-center"
+                        >
+
+                            {
+                                menuOpen
+                                    ? <IoClose size={24} />
+                                    : <HiOutlineMenuAlt3 size={24} />
+                            }
+
+                        </button>
+
+                    </div>
+
                 </div>
 
-                {/* NAV LINKS */}
-                <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+                {/* MOBILE MENU */}
+                <div className={`md:hidden overflow-hidden transition-all duration-500 ${menuOpen ? "max-h-[400px] opacity-100 mt-5" : "max-h-0 opacity-0"}`}>
 
-                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
-                        Home
-                    </a>
+                    <div className="flex flex-col gap-4 text-sm font-medium text-gray-700 pb-2">
 
-                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
-                        About
-                    </a>
+                        <a href="#">
+                            Home
+                        </a>
 
-                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
-                        Skills
-                    </a>
+                        <a href="#">
+                            About
+                        </a>
 
-                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
-                        Projects
-                    </a>
+                        <a href="#">
+                            Skills
+                        </a>
 
-                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
-                        Experience
-                    </a>
+                        <a href="#">
+                            Projects
+                        </a>
 
-                    <a href="#" className="hover:text-black transition duration-300 -hover:translate-y-[1px]">
-                        Contact
-                    </a>
+                        <a href="#">
+                            Experience
+                        </a>
+
+                        <a href="#">
+                            Contact
+                        </a>
+
+                        <button className="mt-2 group bg-[#111827] text-white px-5 py-3 rounded-xl text-sm font-medium flex items-center justify-center gap-2">
+
+                            Let’s Connect
+
+                            <MdOutlineArrowOutward
+                                size={20}
+                                className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
+                            />
+
+                        </button>
+
+                    </div>
 
                 </div>
-
-                {/* CTA */}
-                <button className="group bg-[#111827] text-white px-5 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-all duration-300 flex items-center gap-2">
-
-                    Let’s Connect
-
-                    <MdOutlineArrowOutward
-                        size={20}
-                        className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
-                    />
-
-                </button>
 
             </div>
 
         </div>
+
     )
 }
 
