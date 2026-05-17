@@ -1,10 +1,22 @@
 import React from 'react'
+import Image from 'next/image'
 
 const HeroImage = () => {
+
     return (
-        <div className="w-85 h-140 border-3 border-white rounded-3xl mb-5 overflow-hidden shadow-lg shadow-orange-50">
-            <img src="/images/hero.png" className="w-full h-full" alt="Hero" />
+
+        <div className="relative w-[360px] h-[520px] 2xl:w-[400px] 2xl:h-[580px] border-[3px] border-white rounded-[2rem] overflow-hidden shadow-lg shadow-orange-50 bg-[#F6EFE7]">
+
+            <Image
+                src="/images/hero.png"
+                alt="Hero"
+                fill
+                priority
+                className="object-cover"
+            />
+
         </div>
+
     )
 }
 
